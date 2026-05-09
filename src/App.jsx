@@ -70,7 +70,7 @@ export default function App() {
               <polyline points="12 6 12 12 16 14" />
             </svg>
           </div>
-          <h1 className="text-lg font-semibold tracking-tight">Abiud's Pomodoro</h1>
+          <h1 className="text-lg font-semibold tracking-tight">Abid's Pomodoro</h1>
         </div>
 
         {/* Settings gear */}

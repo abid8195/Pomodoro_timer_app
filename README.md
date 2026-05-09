@@ -1,4 +1,4 @@
-# Abiud's Pomodoro
+# Abid's Pomodoro
 
 A modern, minimalist productivity timer with motivational quotes — built with **React**, **Vite**, and **Tailwind CSS**. Designed to help students, developers, and remote workers maintain focus through structured work/break intervals.
 
