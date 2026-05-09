@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base layer ---------- */
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: radial-gradient(ellipse at 50% 0%, #2a2a3c 0%, #1e1e2e 60%);
+  }
+
+  /* Focus ring for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+/* ---------- Components layer ---------- */
+@layer components {
+  /* Glassmorphic card */
+  .glass-card {
+    @apply bg-white/[0.04] backdrop-blur-lg border border-white/[0.06]
+           rounded-2xl shadow-2xl shadow-black/20;
+  }
+
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           font-medium rounded-xl transition-all duration-200
+           focus-visible:outline-2 focus-visible:outline-offset-2
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-surface-100
+           hover:bg-accent-bright hover:shadow-lg hover:shadow-accent-glow
+           active:scale-[0.97];
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/[0.06] text-white/80
+           hover:bg-white/[0.12] hover:text-white
+           active:scale-[0.97];
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-white/60
+           hover:bg-white/[0.06] hover:text-white/90
+           active:scale-[0.97];
+  }
+
+  /* Session pill */
+  .session-pill {
+    @apply px-5 py-2.5 rounded-xl text-sm font-semibold
+           transition-all duration-200 cursor-pointer select-none
+           border border-transparent
+           hover:bg-white/[0.06] hover:border-white/[0.10];
+  }
+
+  .session-pill--active {
+    @apply bg-accent/15 border-accent/40 text-accent-bright
+           shadow-lg shadow-accent-glow;
+  }
+}
+
+/* ---------- Utilities ---------- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
