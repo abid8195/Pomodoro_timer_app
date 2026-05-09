@@ -2,7 +2,6 @@
 
 A modern, minimalist productivity timer with motivational quotes — built with **React**, **Vite**, and **Tailwind CSS**. Designed to help students, developers, and remote workers maintain focus through structured work/break intervals.
 
-![Pomodoro Timer Screenshot](./screenshots/app.png)
 
 ## Features
 
@@ -115,9 +114,6 @@ abiuds-pomodoro/
 
 Edit `src/constants.js` to change default durations. User-customised durations are also available via the Settings gear icon and persist across sessions.
 
-## Screenshots
-
-> _Add your own screenshots in the `screenshots/` folder and update the path above._
 
 ## License
 
