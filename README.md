@@ -1,6 +1,6 @@
-# Pomodoro Timer
+# Abiud's Pomodoro
 
-A modern, minimalist productivity timer built with **React**, **Vite**, and **Tailwind CSS**. Designed to help students, developers, and remote workers maintain focus through structured work/break intervals.
+A modern, minimalist productivity timer with motivational quotes — built with **React**, **Vite**, and **Tailwind CSS**. Designed to help students, developers, and remote workers maintain focus through structured work/break intervals.
 
 ![Pomodoro Timer Screenshot](./screenshots/app.png)
 
@@ -12,6 +12,7 @@ A modern, minimalist productivity timer built with **React**, **Vite**, and **Ta
 - **Start / Pause / Reset** — One-click controls with keyboard shortcuts
 - **Session Switching** — Seamless toggling between focus and break modes
 - **Persistent Settings** — Durations saved to `localStorage`
+- **Motivational Quotes** — "Motivate Me" button that displays random inspiring quotes
 - **Dark Theme** — Minimal, glassmorphic UI with subtle accent colours
 - **Fully Responsive** — Looks great on desktop, tablet, and mobile
 - **Accessible** — ARIA labels, keyboard navigation, and semantic markup
@@ -38,7 +39,7 @@ A modern, minimalist productivity timer built with **React**, **Vite**, and **Ta
 
 ```bash
 git clone <your-repo-url>
-cd pomodoro-timer
+cd abiuds-pomodoro
 
 npm install
 npm run dev
@@ -76,22 +77,25 @@ Any static host works — Netlify, Cloudflare Pages, GitHub Pages, etc. Just poi
 ## Project Structure
 
 ```
-pomodoro-timer/
+abiuds-pomodoro/
 ├── public/
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   ├── TimerDisplay.jsx    # Countdown + SVG progress ring
-│   │   ├── TimerControls.jsx   # Start / Pause / Reset buttons
-│   │   ├── SessionSelector.jsx  # Focus / Short Break / Long Break pills
-│   │   └── Settings.jsx        # Duration sliders panel
+│   │   ├── TimerDisplay.jsx       # Countdown + SVG progress ring
+│   │   ├── TimerControls.jsx      # Start / Pause / Reset buttons
+│   │   ├── SessionSelector.jsx    # Focus / Short Break / Long Break pills
+│   │   ├── Settings.jsx           # Duration sliders panel
+│   │   └── MotivationalQuote.jsx  # Random quote picker with "Motivate Me" button
+│   ├── data/
+│   │   └── quotes.js              # Collection of motivational quotes
 │   ├── hooks/
-│   │   ├── useTimer.js         # Core countdown logic
-│   │   └── useLocalStorage.js  # localStorage persistence
-│   ├── constants.js            # Mode definitions and defaults
-│   ├── App.jsx                 # Root layout + keyboard shortcuts
-│   ├── main.jsx                # React entry point
-│   └── index.css               # Tailwind directives + custom styles
+│   │   ├── useTimer.js            # Core countdown logic
+│   │   └── useLocalStorage.js     # localStorage persistence
+│   ├── constants.js               # Mode definitions and defaults
+│   ├── App.jsx                    # Root layout + keyboard shortcuts
+│   ├── main.jsx                   # React entry point
+│   └── index.css                  # Tailwind directives + custom styles
 ├── index.html
 ├── package.json
 ├── vite.config.js

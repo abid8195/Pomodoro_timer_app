@@ -1,9 +1,9 @@
 {
-  "name": "pomodoro-timer",
+  "name": "abiuds-pomodoro",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "A modern, minimalist Pomodoro timer web application built with React, Vite, and Tailwind CSS.",
+  "description": "Abiud's Pomodoro — a modern, minimalist productivity timer with motivational quotes. Built with React, Vite, and Tailwind CSS.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

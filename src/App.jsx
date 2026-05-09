@@ -6,6 +6,7 @@ import TimerDisplay from './components/TimerDisplay.jsx';
 import TimerControls from './components/TimerControls.jsx';
 import SessionSelector from './components/SessionSelector.jsx';
 import Settings from './components/Settings.jsx';
+import MotivationalQuote from './components/MotivationalQuote.jsx';
 
 export default function App() {
   // Persisted settings
@@ -69,7 +70,7 @@ export default function App() {
               <polyline points="12 6 12 12 16 14" />
             </svg>
           </div>
-          <h1 className="text-lg font-semibold tracking-tight">Pomodoro</h1>
+          <h1 className="text-lg font-semibold tracking-tight">Abiud's Pomodoro</h1>
         </div>
 
         {/* Settings gear */}
@@ -98,28 +99,34 @@ export default function App() {
         </div>
       )}
 
-      {/* Main card */}
-      <main className="glass-card flex flex-col items-center gap-8 px-8 py-10 sm:px-12 sm:py-12 w-full max-w-md animate-slide-up">
-        {/* Timer display with progress ring */}
-        <TimerDisplay
-          minutes={minutes}
-          seconds={seconds}
-          progress={progress}
-          isRunning={isRunning}
-          modeLabel={MODE_LABELS[mode]}
-        />
+      {/* Main content — side-by-side on desktop, stacked on mobile */}
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 w-full max-w-4xl animate-slide-up">
+        {/* Timer card */}
+        <main className="glass-card flex flex-col items-center gap-8 px-8 py-10 sm:px-12 sm:py-12 w-full max-w-md">
+          {/* Timer display with progress ring */}
+          <TimerDisplay
+            minutes={minutes}
+            seconds={seconds}
+            progress={progress}
+            isRunning={isRunning}
+            modeLabel={MODE_LABELS[mode]}
+          />
 
-        {/* Controls */}
-        <TimerControls
-          isRunning={isRunning}
-          onStart={start}
-          onPause={pause}
-          onReset={reset}
-        />
+          {/* Controls */}
+          <TimerControls
+            isRunning={isRunning}
+            onStart={start}
+            onPause={pause}
+            onReset={reset}
+          />
 
-        {/* Session switcher */}
-        <SessionSelector activeMode={mode} onSelect={switchMode} />
-      </main>
+          {/* Session switcher */}
+          <SessionSelector activeMode={mode} onSelect={switchMode} />
+        </main>
+
+        {/* Motivational quote panel — beside timer on desktop, below on mobile */}
+        <MotivationalQuote />
+      </div>
 
       {/* Footer */}
       <footer className="mt-10 text-center text-xs text-white/20 animate-fade-in">
